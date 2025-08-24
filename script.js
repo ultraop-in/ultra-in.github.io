@@ -178,7 +178,35 @@ const games = [
         description: 'Play the timeless game of Tic Tac Toe against a friend.',
         image: 'tic-tac-toe-thumbnail.jpg',
         file: 'tic-tac-toe/index.html'
-    }
+    },
+   {
+    id: 'game3',
+    title: 'free-block-puzzle',
+    description: 'Play the timeless game of Tic Tac Toe against a friend.',
+    image: 'free-block-puzzle-thumbnail.jpg',
+    file: 'free-block-puzzle/index.html'
+},
+{
+    id: 'game4',
+    title: 'Chess',
+    description: 'Play the timeless game of Tic Tac Toe against a friend.',
+    image: 'Chess-thumbnail.jpg',
+    file: 'Chess/index.html'
+},
+{
+    id: 'game5',
+    title: 'Snake',
+    description: 'Play the timeless game of Tic Tac Toe against a friend.',
+    image: 'Snake-thumbnail.jpg',
+    file: 'Snake/index.html'
+},
+{
+    id: 'game6',
+    title: 'Sliding Puzzle',
+    description: 'Play the timeless game of Tic Tac Toe against a friend.',
+    image: 'Sliding-puzzle-thumbnail.jpg',
+    file: 'Sliding Puzzle/index.html'
+}
     // Add more games here
 ];
 
