@@ -1,4 +1,4 @@
-﻿/* -------------------------
+/* -------------------------
    1. Mobile Navigation Toggle
 -------------------------- */
 document.addEventListener('DOMContentLoaded', function() {
@@ -165,6 +165,7 @@ const fanVideos = [
    4. Game Data
 -------------------------- */
 const games = [
+
     {
         id: 'game1',
         title: 'Flappy Bird Clone',
@@ -176,39 +177,113 @@ const games = [
         id: 'game2',
         title: 'Tic Tac Toe',
         description: 'Play the timeless game of Tic Tac Toe against a friend.',
-        image: 'Tic-Tac-Toe-thumbnail.jpg',
-        file: 'Tic-Tac-Toe/index.html'
+        image: 'tic-tac-toe-thumbnail.jpg',
+        file: 'tic-tac-toe/index.html'
     },
-   {
-    id: 'game3',
-    title: 'free-block-puzzle',
-    description: 'Play the timeless game of Tic Tac Toe against a friend.',
-    image: 'free-block-puzzle-thumbnail.jpg',
-    file: 'free-block-puzzle/index.html'
-},
-{
-    id: 'game4',
-    title: 'Chess',
-    description: 'Play the timeless game of Tic Tac Toe against a friend.',
-    image: 'chess-thumbnail.jpg',
-    file: 'chess/index.html'
-},
-{
-    id: 'game5',
-    title: 'Snake',
-    description: 'Play the timeless game of Tic Tac Toe against a friend.',
-    image: 'Snake-thumbnail.jpg',
-    file: 'Snake/index.html'
-},
-{
-    id: 'game6',
-    title: 'Sliding Puzzle',
-    description: 'Play the timeless game of Tic Tac Toe against a friend.',
-    image: 'Sliding-puzzle-thumbnail.jpg',
-    file: 'Sliding Puzzle/index.html'
-}
+    {
+        id: 'game3',
+        title: 'free-block-puzzle',
+        description: 'Play the timeless game of Tic Tac Toe against a friend.',
+        image: 'free-block-puzzle-thumbnail.jpg',
+        file: 'free-block-puzzle/index.html'
+    },
+    {
+        id: 'game4',
+        title: 'Chess',
+        description: 'Play the timeless game of Tic Tac Toe against a friend.',
+        image: 'Chess-thumbnail.jpg',
+        file: 'Chess/index.html'
+    },
+    {
+        id: 'game5',
+        title: 'Snake',
+        description: 'Play the timeless game of Tic Tac Toe against a friend.',
+        image: 'Snake-thumbnail.jpg',
+        file: 'Snake/index.html'
+    },
+    {
+        id: 'game6',
+        title: 'Sliding Puzzle',
+        description: 'Play the timeless game of Tic Tac Toe against a friend.',
+        image: 'Sliding-puzzle-thumbnail.jpg',
+        file: 'Sliding Puzzle/index.html'
+    }
     // Add more games here
 ];
+/* Home game slider */
+function loadHomeGameSlider() {
+    const slider = document.getElementById('home-game-slider');
+    if (!slider) return;
+
+    let html = '';
+    games.forEach(game => {
+        html += `
+            <a class="game-slide" data-file="${game.file}">
+                <img src="images/${game.image}" alt="${game.title}">
+                <div class="game-card-content">
+                    <h4 style="margin:6px 0 4px;">${game.title}</h4>
+                    <p style="font-size:0.9rem; color:var(--gray-color); margin:0;">${game.description}</p>
+                </div>
+            </a>
+        `;
+    });
+
+    slider.innerHTML = html + html;
+
+    slider.querySelectorAll('.game-slide').forEach(slide => {
+        slide.addEventListener('click', (e) => {
+            const file = slide.getAttribute('data-file');
+            sessionStorage.setItem('selectedGameFile', file);
+            window.location.href = 'games.html';
+        });
+    });
+
+    let pos = 0;
+    const firstSlide = slider.querySelector('.game-slide');
+    const gap = 20;
+    const slideWidth = firstSlide ? (firstSlide.offsetWidth + gap) : 300;
+
+    let interval = setInterval(() => {
+        pos -= slideWidth;
+        slider.style.transform = `translateX(${pos}px)`;
+        const totalWidth = slider.scrollWidth;
+        if (Math.abs(pos) >= totalWidth / 2) {
+            slider.style.transition = 'none';
+            pos = 0;
+            slider.style.transform = `translateX(${pos}px)`;
+            void slider.offsetWidth;
+            slider.style.transition = 'transform 0.6s ease';
+        }
+    }, 2500);
+
+    slider.addEventListener('mouseenter', () => clearInterval(interval));
+    slider.addEventListener('mouseleave', () => {
+        interval = setInterval(() => {
+            pos -= slideWidth;
+            slider.style.transform = `translateX(${pos}px)`;
+            const totalWidth = slider.scrollWidth;
+            if (Math.abs(pos) >= totalWidth / 2) {
+                slider.style.transition = 'none';
+                pos = 0;
+                slider.style.transform = `translateX(${pos}px)`;
+                void slider.offsetWidth;
+                slider.style.transition = 'transform 0.6s ease';
+            }
+        }, 2500);
+    });
+}
+
+// Play Games button and init call
+document.addEventListener('DOMContentLoaded', function() {
+    const playBtn = document.getElementById('play-games-btn');
+    if (playBtn) {
+        playBtn.addEventListener('click', () => {
+            window.location.href = 'games.html';
+        });
+    }
+    loadHomeGameSlider();
+});
+
 
 function loadFanVideos() {
     const fanGrid = document.getElementById('fan-videos');
