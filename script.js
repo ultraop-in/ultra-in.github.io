@@ -177,34 +177,34 @@ const games = [
         id: 'game2',
         title: 'Tic Tac Toe',
         description: 'Play the timeless game of Tic Tac Toe against a friend.',
-        image: 'tic-tac-toe-thumbnail.jpg',
-        file: 'tic-tac-toe/index.html'
+        image: 'Tic-Tac-Toe-thumbnail.jpg',
+        file: 'Tic-Tac-Toe/index.html'
     },
     {
         id: 'game3',
-        title: 'free-block-puzzle',
-        description: 'Play the timeless game of Tic Tac Toe against a friend.',
+        title: 'Free Block Puzzle',
+        description: 'Arrange blocks to complete lines in this fun brain puzzle game.',
         image: 'free-block-puzzle-thumbnail.jpg',
         file: 'free-block-puzzle/index.html'
     },
     {
         id: 'game4',
         title: 'Chess',
-        description: 'Play the timeless game of Tic Tac Toe against a friend.',
-        image: 'Chess-thumbnail.jpg',
-        file: 'Chess/index.html'
+        description: 'Challenge your mind with the classic strategy game of chess online.',
+        image: 'chess-thumbnail.jpg',
+        file: 'chess/index.html'
     },
     {
         id: 'game5',
         title: 'Snake',
-        description: 'Play the timeless game of Tic Tac Toe against a friend.',
+        description: 'Eat food, grow longer, and survive in the retro Snake arcade game.',
         image: 'Snake-thumbnail.jpg',
         file: 'Snake/index.html'
     },
     {
         id: 'game6',
         title: 'Sliding Puzzle',
-        description: 'Play the timeless game of Tic Tac Toe against a friend.',
+        description: 'Solve the sliding tiles puzzle by arranging pieces into the right order.',
         image: 'Sliding-puzzle-thumbnail.jpg',
         file: 'Sliding Puzzle/index.html'
     }
