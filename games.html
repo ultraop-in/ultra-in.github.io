@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>All Games - UltraOP</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <!-- Copy your existing navbar from index.html here -->
+  <nav id="navbar">
+    <div class="container">
+      <div class="logo"><a href="index.html">Ultra<span class="highlight">OP</span></a></div>
+      <ul>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#channels">Channels</a></li>
+        <li><a href="index.html#gaming">Games</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="index.html#achievements">Stats</a></li>
+        <li><a href="index.html#support">Support</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="mobile-menu"><i class="fas fa-bars"></i></div>
+    </div>
+  </nav>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">All <span class="highlight">Games</span></h2>
+      <p class="section-subtitle">Click any game to open and play</p>
+
+      <div class="game-grid" id="all-games-grid"></div>
+    </div>
+  </section>
+
+  <script>
+    function renderAllGamesPage() {
+      const grid = document.getElementById('all-games-grid');
+      if (!grid) return;
+      let html = '';
+      games.forEach(game => {
+        html += `
+          <a class="game-card" href="games/${game.file}">
+            <img src="images/${game.image}" alt="${game.title}">
+            <div class="game-card-content">
+              <h3>${game.title}</h3>
+              <p>${game.description}</p>
+            </div>
+          </a>
+        `;
+      });
+      grid.innerHTML = html;
+
+      const sel = sessionStorage.getItem('selectedGameFile');
+      if (sel) {
+        sessionStorage.removeItem('selectedGameFile');
+        window.location.href = `games/${sel}`;
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', renderAllGamesPage);
+  </script>
+</body>
+</html>
