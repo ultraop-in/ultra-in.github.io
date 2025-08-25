@@ -176,8 +176,8 @@ const games = [
         id: 'game2',
         title: 'Tic Tac Toe',
         description: 'Play the timeless game of Tic Tac Toe against a friend.',
-        image: 'tic-tac-toe-thumbnail.jpg',
-        file: 'tic-tac-toe/index.html'
+        image: 'Tic-Tac-Toe-thumbnail.jpg',
+        file: 'Tic-Tac-Toe/index.html'
     },
    {
     id: 'game3',
@@ -190,8 +190,8 @@ const games = [
     id: 'game4',
     title: 'Chess',
     description: 'Play the timeless game of Tic Tac Toe against a friend.',
-    image: 'Chess-thumbnail.jpg',
-    file: 'Chess/index.html'
+    image: 'chess-thumbnail.jpg',
+    file: 'chess/index.html'
 },
 {
     id: 'game5',
