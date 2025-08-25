@@ -206,7 +206,7 @@ const games = [
         title: 'Sliding Puzzle',
         description: 'Solve the sliding tiles puzzle by arranging pieces into the right order.',
         image: 'Sliding-puzzle-thumbnail.jpg',
-        file: 'Sliding Puzzle/index.html'
+        file: 'Sliding-Puzzle/index.html'
     }
     // Add more games here
 ];
