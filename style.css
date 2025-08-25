@@ -84,7 +84,7 @@ body {
     width: 100%;
     background-color: rgba(15, 15, 26, 0.95);
     backdrop-filter: blur(10px);
-    z-index: 1000;
+    z-index: 1100;
     padding: 15px 0;
     transition: var(--transition);
     border-bottom: 1px solid rgba(108, 92, 231, 0.2);
@@ -99,6 +99,25 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+/* make sure page content not hidden under fixed navbar */
+body {
+  padding-top: 75px; /* আপনার navbar এর height অনুযায়ী adjust করুন */
+}
+
+/* ensure page content not hidden under fixed navbar */
+body {
+  padding-top: 75px; /* navbar height অনুযায়ী মান adjust করতে পারেন */
+}
+
+/* make sure navbar always on top */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1100;
 }
 
 /* Add this AFTER your existing .logo styles */
@@ -435,6 +454,47 @@ body {
         gap: 30px;
         margin-top: 50px;
     }
+
+/* Home game slider */
+.game-slider-wrapper {
+  overflow: hidden;
+  width: 100%;
+  margin-top: 30px;
+}
+.game-slider {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.6s ease;
+  will-change: transform;
+  align-items: stretch;
+}
+.game-slide {
+  min-width: calc((100% - 40px) / 3);
+  background-color: rgba(255,255,255,0.04);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+.game-slide img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display:block;
+}
+.game-slide .game-card-content {
+  padding: 12px;
+  text-align:center;
+}
+@media (max-width: 900px) {
+  .game-slide { min-width: calc((100% - 20px) / 2); }
+}
+@media (max-width: 520px) {
+  .game-slide { min-width: 100%; }
+}
+
 
     .game-card {
         background-color: rgba(255, 255, 255, 0.05);
@@ -998,4 +1058,89 @@ footer {
         min-width: 280px;
         height: 180px;
     }
+}
+footer {
+  position: relative;
+  z-index: 20;
+}
+
+/* FORCE header/footer visibility for games.html */
+#navbar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 4000 !important;   /* navbar সর্বোচ্চে রাখুন */
+  display: block !important;
+}
+
+body {
+  padding-top: 90px !important; /* navbar উচ্চতা অনুযায়ী adjust করুন */
+}
+
+/* footer কে দেখাতে নিচু কিন্তু উপরের overlay গুলোর নিচে না রাখুন */
+footer {
+  position: relative !important;
+  z-index: 3000 !important;
+  display: block !important;
+}
+
+/* যেগুলো পুরো পেজ কভার করতে পারে তাদের relative করে নিচে নামান */
+.game-fullscreen,
+.game-iframe-wrapper,
+.ad-modal,
+#game-container,
+.games-embed,
+iframe.fullscreen,
+iframe.game-frame {
+  position: relative !important;
+  z-index: 1 !important;
+  top: auto !important;
+  left: auto !important;
+  height: auto !important;
+}
+
+/* safety: যদি কেউ display:none দিয়ে লুকিয়ে থাকে তখনও দেখাবে */
+#navbar, footer {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* FORCE header/footer visibility for games.html */
+#navbar {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 4000 !important;
+  display: block !important;
+}
+
+body {
+  padding-top: 90px !important;
+}
+
+footer {
+  position: relative !important;
+  z-index: 3000 !important;
+  display: block !important;
+}
+
+.game-fullscreen,
+.game-iframe-wrapper,
+.ad-modal,
+#game-container,
+.games-embed,
+iframe.fullscreen,
+iframe.game-frame {
+  position: relative !important;
+  z-index: 1 !important;
+  top: auto !important;
+  left: auto !important;
+  height: auto !important;
+}
+
+#navbar, footer {
+  visibility: visible !important;
+  opacity: 1 !important;
 }
