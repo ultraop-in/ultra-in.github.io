@@ -1,0 +1,146 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gaming Blogs & YouTube Tips | UltraOP</title>
+  <meta name="description" content="Read UltraOP’s gaming blogs, YouTube tips, streaming guides, and tech updates. Learn how to grow your channel and stay updated on gaming trends.">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="blog/blog.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- JS -->
+  <script defer src="blog/blog.js"></script>
+
+  <!-- Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/ultraop-icon/ultraop-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/ultraop-icon/ultraop-16x16.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/ultraop-icon/ultraop-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="images/ultraop-icon/ultraop-512x512.png">
+  <link rel="apple-touch-icon" href="images/ultraop-icon/ultraop-apple-touch-icon.png">
+  <link rel="manifest" href="images/ultraop-icon/ultraop.webmanifest">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav id="navbar">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">Ultra<span class="highlight">OP</span></a>
+      </div>
+      <ul>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#channels">Channels</a></li>
+        <li><a href="index.html#gaming">Games</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="index.html#support">Support</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <div class="mobile-menu">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="blog-header">
+    <div class="container">
+      <h1>UltraOP Blog</h1>
+      <p>Gaming insights, news, and exclusive content</p>
+    </div>
+  </header>
+
+  <!-- Categories -->
+  <section class="blog-categories">
+    <div class="container">
+      <div class="category-tabs">
+        <button class="tab-btn active" data-category="all">All Posts</button>
+        <button class="tab-btn" data-category="gaming">Gaming</button>
+        <button class="tab-btn" data-category="knowledge">General Knowledge</button>
+        <button class="tab-btn" data-category="news">Gaming News</button>
+        <button class="tab-btn" data-category="support">Creators Support</button>
+        <button class="tab-btn" data-category="redeem">Free Redeem Codes</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Posts grid -->
+  <section class="blog-posts">
+    <div class="container">
+      <div class="posts-grid" id="posts-container"></div>
+    </div>
+  </section>
+
+  <!-- Ad: Top -->
+  <div class="ad-banner top-ad">
+    <div class="container">
+      <div class="ad-placeholder">
+        <p>Advertisement</p>
+        <div class="ad-content">
+          <img src="images/placeholder-ad.jpg" alt="Advertisement">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Single Post (hidden) -->
+  <section class="single-post" id="single-post" style="display:none;">
+    <div class="container">
+      <button class="back-to-blog" id="back-to-blog">
+        <i class="fas fa-arrow-left"></i> Back to Blog
+      </button>
+      <article id="post-content"></article>
+
+      <!-- Ad: Middle -->
+      <div class="ad-banner middle-ad">
+        <div class="ad-placeholder">
+          <p>Advertisement</p>
+          <div class="ad-content">
+            <img src="images/placeholder-ad.jpg" alt="Advertisement">
+          </div>
+        </div>
+      </div>
+
+      <!-- Redeem only -->
+      <div class="redeem-section" id="redeem-section" style="display:none;">
+        <div class="redeem-container">
+          <h3>Redeem Code Generator</h3>
+          <p>Watch an ad to generate your free redeem code!</p>
+          <button class="cta-button" id="generate-code-btn">Generate Code</button>
+          <div class="code-display" id="code-display"></div>
+        </div>
+      </div>
+
+      <!-- Ad: Bottom -->
+      <div class="ad-banner bottom-ad">
+        <div class="ad-placeholder">
+          <p>Advertisement</p>
+          <div class="ad-content">
+            <img src="images/placeholder-ad.jpg" alt="Advertisement">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Full-screen Ad Modal -->
+  <div class="ad-modal" id="ad-modal">
+    <div class="ad-modal-content">
+      <div class="ad-timer">
+        <span id="ad-timer">90</span> seconds remaining
+      </div>
+      <div class="ad-display">
+        <p>Full Screen Advertisement</p>
+        <img src="images/fullscreen-ad.jpg" alt="Full Screen Ad">
+      </div>
+      <button class="close-ad" id="close-ad" disabled>Close Ad (90s)</button>
+    </div>
+  </div>
+
+  <footer><!-- copy from index.html --></footer>
+
+  <!-- Navbar toggle js -->
+  <script defer src="script.js"></script>
+</body>
+</html>
