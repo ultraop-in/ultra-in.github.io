@@ -4,7 +4,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuBtn = document.querySelector('.mobile-menu');
     const navMenu = document.querySelector('#navbar ul');
-    if (mobileMenuBtn && navMenu) {
+    
     mobileMenuBtn.addEventListener('click', function() {
         navMenu.classList.toggle('show');
     });
@@ -14,14 +14,11 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', () => {
             navMenu.classList.remove('show');
         });
-    }
     });
 
     // Navbar scroll effect
     window.addEventListener('scroll', function() {
         const navbar = document.getElementById('navbar');
-        if (!navbar) return;
-        window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
@@ -180,7 +177,7 @@ const games = [
         id: 'game2',
         title: 'Tic Tac Toe',
         description: 'Play the timeless game of Tic Tac Toe against a friend.',
-        image: 'Tic-Tac-Toe-thumbnail.jpg',
+        image: 'tic-tac-toe-thumbnail.jpg',
         file: 'Tic-Tac-Toe/index.html'
     },
     {
@@ -194,7 +191,7 @@ const games = [
         id: 'game4',
         title: 'Chess',
         description: 'Challenge your mind with the classic strategy game of chess online.',
-        image: 'chess-thumbnail.jpg',
+        image: 'Chess-thumbnail.jpg',
         file: 'chess/index.html'
     },
     {
@@ -463,35 +460,35 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-if (window.firebase) {
-  firebase.initializeApp(firebaseConfig);
-  const database = firebase.database();
+firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
 
 // Comment form submission
-  const form = document.getElementById('comment-form');
-  if (form) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('name')?.value.trim();
-      const email = document.getElementById('email')?.value.trim();
-      const message = document.getElementById('message')?.value.trim();
-      if (name && email && message) {
+document.getElementById('comment-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    
+    if (name && email && message) {
+        // Save to Firebase
         database.ref('comments').push({
-          name, email, message,
-          timestamp: firebase.database.ServerValue.TIMESTAMP
+            name: name,
+            email: email,
+            message: message,
+            timestamp: firebase.database.ServerValue.TIMESTAMP
         }).then(() => {
-          alert('Thank you for your comment!');
-          form.reset();
-        }).catch(err => {
-          console.error('Error saving comment:', err);
-          alert('There was an error submitting your comment. Please try again.');
+            alert('Thank you for your comment!');
+            document.getElementById('comment-form').reset();
+        }).catch(error => {
+            console.error("Error saving comment:", error);
+            alert('There was an error submitting your comment. Please try again.');
         });
-      } else {
+    } else {
         alert('Please fill in all fields.');
-      }
-    });
-  }
-}
+    }
+});
 
 /* -------------------------
    7. Particle Background
