@@ -28,6 +28,16 @@
     image: 'thumb.jpg',
     date: '2023-06-01',
     views: 35600
+  },
+  {
+    id: 4,
+    slug: 'online-gaming-act-2025',
+    title: 'India’s Online Gaming Act 2025 Explained — What Creators & Players Must Know',
+    excerpt: 'Full breakdown of India’s Online Gaming Act 2025. What is banned, what is allowed, how state-level licensing works, and key action items for creators, developers, and streamers.',
+    category: 'gaming',
+    image: 'og-online-gaming-act-2025.jpg',
+    date: '2025-09-06',
+    views: 95605
   }
 ];
 
