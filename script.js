@@ -287,6 +287,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function loadFanVideos() {
     const fanGrid = document.getElementById('fan-videos');
+    if (!fanGrid) {
+        console.warn('loadFanVideos: #fan-videos not found — aborting render.');
+        return;
+    }
     let html = '';
     
     fanVideos.forEach(video => {
@@ -309,6 +313,10 @@ function loadFanVideos() {
 -------------------------- */
 function loadGames() {
     const gameGrid = document.getElementById('game-grid');
+    if (!gameGrid) {
+        console.warn('loadGames: #game-grid not found — aborting render.');
+        return;
+    }
     let html = '';
 
     games.forEach(game => {
@@ -326,8 +334,19 @@ function loadGames() {
     gameGrid.innerHTML = html;
 }
 
-loadFanVideos();
-loadGames();
+// Run only when DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    try {
+        if (typeof loadFanVideos === 'function') loadFanVideos();
+    } catch (e) {
+        console.error('loadFanVideos error:', e);
+    }
+    try {
+        if (typeof loadGames === 'function') loadGames();
+    } catch (e) {
+        console.error('loadGames error:', e);
+    }
+});
 
 /* -------------------------
    5. Recent Videos Carousel
