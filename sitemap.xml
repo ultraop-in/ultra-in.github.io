@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+
+	 <!-- Homepage -->
 	<url>
 		<loc>https://ultraop.in/</loc>
 		<lastmod>2025-08-25</lastmod>
@@ -7,6 +9,7 @@
 		<priority>1.0</priority>
 	</url>
 
+	<!-- Blog Page -->
 	<url>
 		<loc>https://ultraop.in/blog.html</loc>
 		<lastmod>2025-08-25</lastmod>
@@ -14,12 +17,43 @@
 		<priority>0.8</priority>
 	</url>
 
+	<!-- Games Page -->
 	<url>
 		<loc>https://ultraop.in/games.html</loc>
 		<lastmod>2025-08-25</lastmod>
 		<changefreq>weekly</changefreq>
-		<priority>0.8</priority>
+		<priority>0.9</priority>
 	</url>
+
+	<!-- Individual Blog Posts -->
+	<url>
+		<loc>https://ultraop.in/blog/freefire-redeem-codes-jun-2023/</loc>
+		<lastmod>2025-06-01</lastmod>
+		<priority>0.7</priority>
+		<changefreq>monthly</changefreq>
+	</url>
+
+	<url>
+		<loc>https://ultraop.in/blog/grow-as-gaming-creator/</loc>
+		<lastmod>2025-06-10</lastmod>
+		<priority>0.8</priority>
+		<changefreq>monthly</changefreq>
+	</url>
+
+	<url>
+		<loc>https://ultraop.in/blog/top-freefire-strategies/</loc>
+		<lastmod>2025-06-15</lastmod>
+		<priority>0.8</priority>
+		<changefreq>monthly</changefreq>
+	</url>
+
+	<url>
+		<loc>https://ultraop.in/blog/online-gaming-act-2025/</loc>
+		<lastmod>2025-06-15</lastmod>
+		<priority>0.9</priority>
+		<changefreq>monthly</changefreq>
+	</url>
+	
 
 	<!-- 🎮 Individual Game Pages -->
 	<url>
