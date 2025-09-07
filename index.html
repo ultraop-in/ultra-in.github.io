@@ -37,7 +37,26 @@
   <link rel="icon" type="image/png" sizes="512x512" href="images/ultraop-icon/ultraop-512x512.png">
   <link rel="apple-touch-icon" href="images/ultraop-icon/ultraop-apple-touch-icon.png">
   <link rel="manifest" href="images/ultraop-icon/ultraop.webmanifest">
-  <script type="application/ld+json">
+  <!-- 🔥 UltraOP Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "UltraOP",
+  "url": "https://ultraop.in/",
+  "description": "Free Online Games, Gaming Blog & Premium Content",
+  "publisher": {
+    "@type": "Organization",
+    "name": "UltraOP",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ultraop.in/images/ultraop-icon/ultraop-512x512.png"
+    }
+  }
+}
+</script>
+
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -50,6 +69,42 @@
     "https://www.rooter.gg/profile/142404154",
     "https://www.youtube.com/@ultraoplive"
   ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://ultraop.in/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Games",
+      "item": "https://ultraop.in/games"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "What is UltraOP?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "UltraOP is a free online gaming and content platform offering mini-games, YouTube content, and community features."
+    }
+  }]
 }
 </script>
 </head>
