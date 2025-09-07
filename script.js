@@ -45,9 +45,9 @@ async function fetchChannelData(channelId, statsId, videosId) {
         if (statsData.items && statsData.items.length > 0) {
             const stats = statsData.items[0].statistics;
             document.getElementById(statsId).innerHTML = `
-                <p><i class="fas fa-users"></i> Subscribers: ${formatNumber(stats.subscriberCount)}</p>
-                <p><i class="fas fa-eye"></i> Views: ${formatNumber(stats.viewCount)}</p>
-                <p><i class="fas fa-video"></i> Videos: ${formatNumber(stats.videoCount)}</p>
+                <p><i class="fas fa-users"></i> Subscribers: ${formatNumberWithCommas(stats.subscriberCount)}</p>
+                <p><i class="fas fa-eye"></i> Views: ${formatNumberWithCommas(stats.viewCount)}</p>
+                <p><i class="fas fa-video"></i> Videos: ${formatNumberWithCommas(stats.videoCount)}</p>
             `;
         }
 
@@ -80,7 +80,7 @@ async function fetchChannelData(channelId, statsId, videosId) {
 }
 
 // Format large numbers with commas
-function formatNumber(num) {
+function formatNumberWithCommas(num) {
     return parseInt(num).toLocaleString();
 }
 
@@ -107,7 +107,7 @@ function animateCounters() {
             const currentValue = Math.floor(progress * target);
             
             // Format the number with k/M suffixes
-            counter.textContent = formatNumber(currentValue) + suffix;
+            counter.textContent = formatNumberWithSuffix(currentValue) + suffix;
         });
         
         if (progress < 1) {
@@ -119,7 +119,7 @@ function animateCounters() {
 }
 
 // Format numbers with k/M suffixes
-function formatNumber(num) {
+function formatNumberWithSuffix(num) {
     if (num >= 1000000) {
         return (num / 1000000).toFixed(1) + 'M';
     }
