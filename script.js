@@ -402,15 +402,21 @@ async function loadRecentVideos() {
 }
 
 // Carousel navigation
-document.getElementById('next').addEventListener('click', () => {
-    const wrapper = document.querySelector('.video-wrapper');
-    wrapper.scrollBy({ left: 300, behavior: 'smooth' });
-});
+const nextBtn = document.getElementById('next');
+if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+        const wrapper = document.querySelector('.video-wrapper');
+        wrapper.scrollBy({ left: 300, behavior: 'smooth' });
+    });
+}
 
-document.getElementById('prev').addEventListener('click', () => {
-    const wrapper = document.querySelector('.video-wrapper');
-    wrapper.scrollBy({ left: -300, behavior: 'smooth' });
-});
+const prevBtn = document.getElementById('prev');
+if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+        const wrapper = document.querySelector('.video-wrapper');
+        wrapper.scrollBy({ left: -300, behavior: 'smooth' });
+    });
+}
 
 loadRecentVideos();
 
